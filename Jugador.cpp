@@ -19,6 +19,8 @@ class Jugador{
 	public:
 		
 		Jugador(){
+			nombre="";
+			galletas=0;
 			repo=new Reposteria();
 		}//Fin del constructor simple
 		
