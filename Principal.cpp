@@ -24,7 +24,7 @@ using namespace std;
 			}//Fin del switch de las opciones
 			cout<<"Volver al menu?1.-Si,2.-No: ";
 			cin>>r;
-			cout<<"\n\n\n\n";
+			cout<<"\n\n\n\n";	
 		}//Fin del while del menu
 		system("pause");
 		return 0;
