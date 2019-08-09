@@ -2,29 +2,26 @@
 #include<string>
 #include<vector>
 #include<bits/stdc++.h>
-#include "Mejoras.cpp"
-#include "Edificios.cpp"
-#ifndef REPOSTERIA_CPP
-#define REPOSTERIA_CPP
+#ifndef MEJORAS_CPP
+#define MEJORAS_CPP
 
 using namespace std;
 
-class Reposteria{
+class Mejoras{
 	
 	private:
 		
-		vector<Mejoras*>mejoras;
-		vector<Edificios*>templos;
 	protected:
 		
 	public:
 		
-		Reposteria(){
+		Mejoras(){
 			
 		}//Fin del constructor simple
+		
 		void print(){
 		}//Metodo print
-		~Reposteria(){
+		~Mejoras(){
 			
 		}//Destructor
 };
