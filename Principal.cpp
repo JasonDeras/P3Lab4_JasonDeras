@@ -14,6 +14,7 @@
 using namespace std;
 
 	int main(){
+		
 		//Variables de control del jugador
 		Jugador* j;
 		string nombre;
@@ -25,9 +26,15 @@ using namespace std;
 		Banco *b;
 		Templo *t;
 		Oreo *o;
-		Migajas *m; 
+		Migajas *m;
+		
+		//Variables de menu 
 		int op;
 		int r=1;
+		int cont_oreo=0;
+		int cont_miga=0;
+		
+		//Inicio del programa
 		cout<<"Ingrese nombre del jugador: ";
 		cin>>nombre;
 		j=new Jugador(nombre,0,repo);
@@ -59,15 +66,17 @@ using namespace std;
 						g=new Granja();
 						j->getReposteria()->setEdificio(g);
 						if(g->getPro()==10){
-								j->setGalletas(j->getGalletas()+g->Especial());
+							j->setGalletas((j->getGalletas()-50)+g->Especial()+g->getProduccion_base());
 						}else {
-							j->setGalletas(j->getGalletas()+1);
+							j->setGalletas((j->getGalletas()-g->getPrecio_Base())+g->getProduccion_base());
 						}//If que valida si tiene lo suficciente para aplicar el bono
-						cout<<"Precio para comprar la siguiente granja "<<g->Aumento();
+						g->setPrecio_base(g->Aumento());
+						cout<<"Precio para comprar la siguiente granja: "<<g->getPrecio_Base();
 					}else{
 						cout<<"No tiene las galletas suficientes para comprar una granja";
 					}//If que valida si tiene las suficientes galletas para comprar una granja
 					cout<<"\n\n\n\n";
+					
 				break;
 				
 				case 3:
@@ -75,6 +84,10 @@ using namespace std;
 					if(j->getGalletas()>=100){
 						b=new Banco();
 						j->getReposteria()->setEdificio(b);
+						j->setGalletas((j->getGalletas()-100)+b->getProduccion_base());
+						b->setPrecio_base(b->getPrecio_Base()+b->Aumento());
+						cout<<"Precio para comprar el siguiente banco: "<<b->getPrecio_Base();
+						b->Especial();
 					}else {
 						cout<<"No tiene las galletas suficientes para compar un Banco";
 					}//If que valida si tiene las suficientes galletas para comprar un banco
@@ -87,6 +100,10 @@ using namespace std;
 					if(j->getGalletas()>=200){
 						t=new Templo();
 						j->getReposteria()->setEdificio(t);
+						j->setGalletas((j->getGalletas()-200)+t->getProduccion_base());
+						t->setPrecio_base(t->getPrecio_Base()+t->Aumento());
+						cout<<"Precio para comprar el siguiente templo: "<<t->getPrecio_Base();
+						t->Especial();
 					}else{
 						cout<<"No tiene las suficientes galletas para comprar un Templo";
 					}//If que valida si tiene las suficientes galletas para comprar un templo
@@ -96,9 +113,33 @@ using namespace std;
 				
 				case 5:
 					
+					if(cont_oreo==0){
+						cont_oreo=1;
+						if(j->getGalletas()>=100){
+							j->setGalletas(j->getGalletas()-100);
+						}else{
+							cout<<"No tiene las suficientes galletas para comprar una oreo";
+						}
+					}else {
+						cout<<"Solo puede tener una oreo";
+					}//Fin del if que valida si solo tiene una oreo
+					
+					cout<<"\n\n\n\n";
 				break;
 				
 				case 6:
+					
+					if(cont_miga==0){
+						cont_miga=1;
+						if(j->getGalletas()>=1000){
+							j->setGalletas(j->getGalletas()-1000);
+						}else{
+							cout<<"No tiene las suficientes galletas para comprar una migakas";
+						}
+					}else {
+						cout<<"Solo puede tener una migajas";
+					}//Fin del if que valida si solo tiene una oreo
+					cout<<"\n\n\n\n";
 					
 				break;
 				
