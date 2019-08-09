@@ -21,12 +21,12 @@ class Banco:public Edificios{
 			pro_base=15;
 		}//Fin del constructor simple
 		
-		void Aumento(){
+		int Aumento(){
 			base=base+40;
 		}//Metodo polimorfo de aumento
 		
-		void Especial(){
-			pro_base++;
+		int Especial(){
+			return pro_base++;
 		}//Metodo especial
 		
 		~Banco(){

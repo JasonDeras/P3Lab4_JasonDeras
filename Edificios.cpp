@@ -62,15 +62,11 @@ class Edificios{
 			cout<<"Produccion base: "<<produccion_base<<endl;
 		}//Metodo print
 		
-		virtual void Aumento(){
-			precio_base=precio_base+0;
-		}//Metodo polimorfo de aumento
+		virtual int Aumento()=0;//Metodo polimorfico del aumento
 		
-		virtual void Especia(){
-			
-		}//Metodo polimorfo de lo especia
+		virtual int Especial()=0;//Metodo polimofico del bono
 		
-		~Edificios(){
+		virtual ~Edificios(){
 			
 		}//Destructor
 };

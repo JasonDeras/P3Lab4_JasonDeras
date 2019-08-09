@@ -21,12 +21,12 @@ class Templo:public Edificios{
 			pro_base=15;
 		}//Fin del constructor simple
 		
-		void Aumento(){
+		int Aumento(){
 			base=base+100;
 		}//Metodo polimorfo de aumento
 		
-		void Especial(){
-			pro_base+=3;
+		int Especial(){
+			return pro_base+=3;
 		}//Metodo especial
 		
 		~Templo(){

@@ -59,7 +59,7 @@ class Reposteria{
 			for(int i=0;i<templos.size();i++){
 				templos[i]->print();
 			}//For de impresion de los templos
-			
+			cout<<"\n\n\n\n";
 		}//Metodo print
 		
 		~Reposteria(){

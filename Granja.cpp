@@ -12,6 +12,7 @@ class Granja:public Edificios{
 		
 		int base;
 		Jugador* j;
+		int pro;
 		
 	protected:
 		
@@ -19,14 +20,29 @@ class Granja:public Edificios{
 		
 		Granja():Edificios("Granja",50,5){
 			base=50;
+			pro=5;
 		}//Fin del constructor simple
 		
-		void Aumento(){
-			base=base+15;
+		int Aumento(){
+			return base=base+15;
 		}//Metodo polimorfo de aumento
+		void setPro(int pro){
+			this->pro=pro;
+		}//Set de la produccion base
 		
-		void Especial(){
-			j->setGalletas(j->getGalletas()+20);
+		int getPro(){
+			return this->pro;
+		}//Get de la produccion base
+		
+		int Especial(){
+			if(pro==10){
+				j->setGalletas(j->getGalletas()+20);
+				return j->getGalletas();
+				this->setPro(5);
+			}else {
+				pro++;
+				return j->getGalletas();
+			}
 		}//Metodo especial
 		
 		~Granja(){
