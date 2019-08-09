@@ -42,6 +42,8 @@ class Mejoras{
 			return this->precio;
 		}//Get del precio
 		
+		virtual int produccion()=0;
+		
 		void print(){
 			cout<<"Nombre de la mejora: "<<nombre<<endl;
 			cout<<"Preico de la mejora: "<<precio<<endl;

@@ -3,6 +3,7 @@
 #include<vector>
 #include<bits/stdc++.h>
 #include<string.h>
+#include "Jugador.cpp"
 
 using namespace std;
 
@@ -13,8 +14,17 @@ using namespace std;
 		
 		while(){
 			cout<<"Menu\n\n\n\n";
+			cout<<"1. Hacer clic\n\n";
+			cout<<"2. Comprar Granja\n\n";
+			cout<<"3. Comprar Banco\n\n";
+			cout<<"4. Comprar Templo\n\n";
+			cout<<"5. Comprar Oreo\n\n";
+			cout<<"6. Comprar Migajas\n\n";
+			cout<<"7. Mostrar edificios y mejoras\n\n";
+			cout<<"8. Salir\n\n";
 			cout<<"Ingrese una opcion: ";
 			cin>>op;
+			cout<<"\n\n\n\n";
 			switch(op){
 				
 				default: 
